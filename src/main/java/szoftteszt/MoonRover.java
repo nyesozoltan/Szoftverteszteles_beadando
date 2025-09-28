@@ -13,9 +13,11 @@ class MoonRover {
 
     private String rotateRight() {
         if (direction == "N") {
-            return "E";             
-        } else {
-            return "S";              
+            return "E";
+        } else if (direction == "E") {
+            return "S";
+        } else  {
+            return "W";                   
         }        
     }
 }
