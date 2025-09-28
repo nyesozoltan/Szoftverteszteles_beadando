@@ -2,37 +2,17 @@ package szoftteszt;
 
 class MoonRover {
 
-    String direction = "N";
+    Direction direction = Direction.NORTH;
 
     String execute(String commands) {
         for (char c : commands.toCharArray()) {
             if (c == 'R') {
-                direction = rotateRight(direction);
+                direction = direction.right();
             }
             if (c == 'L') {
-                direction = rotateLeft(direction);
+                direction = direction.left();
             }                                   
         }
-       return "0:0:" + direction;       
-    }
-
-     private String rotateLeft(String direction) {
-        return switch (direction) {
-            case "N" -> "W";
-            case "W" -> "S";
-            case "S" -> "E";
-            case "E" -> "N";            
-            default -> direction;
-        };
-    }
-
-    private String rotateRight(String direction) {
-        return switch (direction) {
-            case "N" -> "E";
-            case "E" -> "S";
-            case "S" -> "W";
-            case "W" -> "N";
-            default -> direction;
-        };
-    }
+       return "0:0:" + direction.value();       
+    }   
 }
