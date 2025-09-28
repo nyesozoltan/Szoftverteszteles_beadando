@@ -5,14 +5,17 @@ class MoonRover {
     String direction = "N";
 
     String execute(String commands) {
-        for (char c : commands.toCharArray()) {            
-                if (direction == "E") {
-                    direction = "S";                
-                }
-                if (direction == "N") {
-                    direction = "E";                
-                }            
+        for (char c : commands.toCharArray()) {
+            direction = rotateRight();                     
         }
        return "0:0:" + direction;       
+    }
+
+    private String rotateRight() {
+        if (direction == "N") {
+            return "E";             
+        } else {
+            return "S";              
+        }        
     }
 }
