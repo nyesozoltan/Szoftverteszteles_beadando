@@ -22,7 +22,8 @@ class MoonRover {
     }
     
     private Coordinate forward() {
-        int y = 0;
+        int y = coordinate.y();
+        
         if (direction == NORTH) {
             y += 1;
         }
