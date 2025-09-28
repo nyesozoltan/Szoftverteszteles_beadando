@@ -16,8 +16,10 @@ class MoonRover {
             return "E";
         } else if (direction == "E") {
             return "S";
-        } else  {
-            return "W";                   
+        } else  if (direction == "S") {
+            return "W";            
+        } else {
+            return "N";                   
         }        
     }
 }
