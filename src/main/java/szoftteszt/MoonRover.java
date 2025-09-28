@@ -6,20 +6,18 @@ class MoonRover {
 
     String execute(String commands) {
         for (char c : commands.toCharArray()) {
-            direction = rotateRight();                     
+            direction = rotateRight(direction);                     
         }
        return "0:0:" + direction;       
     }
 
-    private String rotateRight() {
-        if (direction == "N") {
-            return "E";
-        } else if (direction == "E") {
-            return "S";
-        } else  if (direction == "S") {
-            return "W";            
-        } else {
-            return "N";                   
-        }        
+    private String rotateRight(String direction) {
+        return switch (direction) {
+            case "N" -> "E";
+            case "E" -> "S";
+            case "S" -> "W";
+            case "W" -> "N";
+            default -> direction;
+        };
     }
 }
