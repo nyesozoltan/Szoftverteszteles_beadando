@@ -20,7 +20,8 @@ class MoonRover {
         return switch (direction) {
             case "N" -> "W";
             case "W" -> "S";
-            case "S" -> "E";            
+            case "S" -> "E";
+            case "E" -> "N";            
             default -> direction;
         };
     }
