@@ -30,7 +30,8 @@ public class MoonRoverTest {
 
    @ParameterizedTest
     @CsvSource({
-        "L, 0:0:W"        
+        "L, 0:0:W",
+        "LL, 0:0:S"        
     }) 
 
     public void
