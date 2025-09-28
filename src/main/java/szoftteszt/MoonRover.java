@@ -1,8 +1,10 @@
 package szoftteszt;
 
+import static szoftteszt.Direction.NORTH;
 class MoonRover {
 
-    Direction direction = Direction.NORTH;
+    Direction direction = NORTH;
+    Coordinate coordinate = new Coordinate(0, 0);
 
     String execute(String commands) {
         for (char c : commands.toCharArray()) {
@@ -11,8 +13,19 @@ class MoonRover {
             }
             if (c == 'L') {
                 direction = direction.left();
+            }
+            if (c == 'F') {
+                coordinate = forward();
             }                                   
         }
-       return "0:0:" + direction.value();       
-    }   
+       return coordinate.x() + ":" + coordinate.y() + ":" + direction.value();      
+    }
+    
+    private Coordinate forward() {
+        int y = 0;
+        if (direction == NORTH) {
+            y += 1;
+        }
+        return new Coordinate(coordinate.x(), y);
+    }
 }
