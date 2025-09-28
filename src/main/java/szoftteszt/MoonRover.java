@@ -3,6 +3,7 @@ package szoftteszt;
 import static szoftteszt.Direction.NORTH;
 class MoonRover {
 
+    private static final  int MAX_HEIGHT = 8;
     Direction direction = NORTH;
     Coordinate coordinate = new Coordinate(0, 0);
 
@@ -22,11 +23,24 @@ class MoonRover {
     }
     
     private Coordinate forward() {
-        int y = coordinate.y();
-        
-        if (direction == NORTH) {
+    int x = coordinate.x();
+    int y = coordinate.y();
+
+    if (direction == Direction.NORTH) {
+        if (y == MAX_HEIGHT) {        
+            y = 0;
+            direction = Direction.SOUTH;
+        } else {
             y += 1;
         }
-        return new Coordinate(coordinate.x(), y);
-    }
+    } else if (direction == Direction.SOUTH) {
+        if (y == 0) {             
+            y = MAX_HEIGHT;
+            direction = Direction.NORTH;
+        } else {
+            y -= 1;
+        }
+    }    
+    return new Coordinate(x, y);
+}
 }
