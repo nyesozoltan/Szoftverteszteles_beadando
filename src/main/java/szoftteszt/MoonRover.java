@@ -18,7 +18,8 @@ class MoonRover {
 
      private String rotateLeft(String direction) {
         return switch (direction) {
-            case "N" -> "W";            
+            case "N" -> "W";
+            case "W" -> "S";            
             default -> direction;
         };
     }
