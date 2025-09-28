@@ -27,4 +27,14 @@ public class MoonRoverTest {
     rotate_right(String commands, String position) {
          assertThat(moonrover.execute(commands), is(position));              
     }
+
+   @ParameterizedTest
+    @CsvSource({
+        "L, 0:0:W"        
+    }) 
+
+    public void
+    rotate_left(String commands, String position) {
+         assertThat(moonrover.execute(commands), is(position));              
+    }
 }
