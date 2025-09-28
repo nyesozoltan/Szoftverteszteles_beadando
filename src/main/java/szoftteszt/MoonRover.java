@@ -26,21 +26,26 @@ class MoonRover {
     int x = coordinate.x();
     int y = coordinate.y();
 
+    int dy = 0;
     if (direction == Direction.NORTH) {
-        if (y == MAX_HEIGHT) {        
-            y = 0;
-            direction = Direction.SOUTH;
-        } else {
-            y += 1;
-        }
-    } else if (direction == Direction.SOUTH) {
-        if (y == 0) {             
-            y = MAX_HEIGHT;
-            direction = Direction.NORTH;
-        } else {
-            y -= 1;
-        }
+        dy = 1;
+    }
+    else if (direction == Direction.SOUTH) {
+        dy = -1;
+    }
+
+    int ny = y + dy;    
+    if (ny > MAX_HEIGHT) {
+        ny = 0;
+    }
+    if (ny < 0) {
+    ny = MAX_HEIGHT;
     }    
-    return new Coordinate(x, y);
+    if (ny == 0 && (direction == Direction.NORTH || direction == Direction.SOUTH)) {
+        direction = direction.opposite();
+    }
+
+    return new Coordinate(x, ny);
 }
+
 }
