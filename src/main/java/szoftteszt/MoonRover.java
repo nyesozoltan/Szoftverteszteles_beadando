@@ -1,6 +1,7 @@
 package szoftteszt;
 
 import static szoftteszt.Direction.NORTH;
+
 class MoonRover {
 
     private static final  int MAX_HEIGHT = 8;
@@ -16,17 +17,18 @@ class MoonRover {
                 direction = direction.left();
             }
             if (c == 'F') {
-                coordinate = forward();
+                coordinate = move();
             }                                   
         }
        return coordinate.x() + ":" + coordinate.y() + ":" + direction.value();      
     }
     
-    private Coordinate forward() {
+    private Coordinate move() {
     int x = coordinate.x();
     int y = coordinate.y();
 
     int dy = 0;
+    //mozgás északi vagy déli irányba
     if (direction == Direction.NORTH) {
         dy = 1;
     }
@@ -34,6 +36,7 @@ class MoonRover {
         dy = -1;
     }
 
+    //ha a mozgás eléri a pólust fordulás
     int ny = y + dy;    
     if (ny > MAX_HEIGHT) {
         ny = 0;
@@ -44,6 +47,10 @@ class MoonRover {
     if (ny == 0 && (direction == Direction.NORTH || direction == Direction.SOUTH)) {
         direction = direction.opposite();
     }
+    
+    if (direction == Direction.EAST) {
+        x += 1;
+    }  
 
     return new Coordinate(x, ny);
 }
