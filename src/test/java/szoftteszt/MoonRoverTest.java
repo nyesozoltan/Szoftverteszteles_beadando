@@ -79,4 +79,14 @@ public class MoonRoverTest {
          assertThat(moonrover.execute(commands), is(position));              
     }
 
+    @ParameterizedTest
+     @CsvSource({
+        "B, 0:8:N",                                                               
+    }) 
+
+    public void
+    move_bacward_when_facing_north(String commands, String position) {
+         assertThat(moonrover.execute(commands), is(position));              
+    }
+
 }
