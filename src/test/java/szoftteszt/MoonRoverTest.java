@@ -58,7 +58,8 @@ public class MoonRoverTest {
     @CsvSource({
         "RF, 1:0:E",
         "RFFFFF, 5:0:E",
-        "RFFFFFFFFF, 0:0:E"                                               
+        "RFFFFFFFFF, 0:0:E",
+        "RFFFFFFFFFFFFFF, 5:0:E"                                               
     }) 
 
     public void
