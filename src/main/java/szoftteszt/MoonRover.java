@@ -5,6 +5,7 @@ import static szoftteszt.Direction.NORTH;
 class MoonRover {
 
     private static final  int MAX_HEIGHT = 8;
+    private static final  int MAX_WIDTH = 9;
     Direction direction = NORTH;
     Coordinate coordinate = new Coordinate(0, 0);
 
@@ -49,7 +50,7 @@ class MoonRover {
     }
     
     if (direction == Direction.EAST) {
-        x += 1;
+        x = (x + 1) % MAX_WIDTH;
     }  
 
     return new Coordinate(x, ny);
