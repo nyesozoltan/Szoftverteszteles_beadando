@@ -53,7 +53,7 @@ class MoonRover {
         x = (x + 1) % MAX_WIDTH;
     } 
      if (direction == Direction.WEST) {
-        x = 8;
+        x = (x == 0) ? MAX_WIDTH - 1 : x - 1;
     } 
 
     return new Coordinate(x, ny);
