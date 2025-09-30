@@ -55,7 +55,7 @@ public class MoonRoverTest {
     }
 
     @ParameterizedTest
-    @CsvSource({
+     @CsvSource({
         "RF, 1:0:E",
         "RFFFFF, 5:0:E",
         "RFFFFFFFFF, 0:0:E",
@@ -64,6 +64,16 @@ public class MoonRoverTest {
 
     public void
     move_right(String commands, String position) {
+         assertThat(moonrover.execute(commands), is(position));              
+    }
+
+    @ParameterizedTest
+     @CsvSource({
+        "LF, 8:0:W",                                                       
+    }) 
+
+    public void
+    move_left(String commands, String position) {
          assertThat(moonrover.execute(commands), is(position));              
     }
 
