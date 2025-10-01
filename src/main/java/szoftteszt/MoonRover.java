@@ -19,7 +19,10 @@ class MoonRover {
             }
             if (c == 'F') {
                 coordinate = move();
-            }                                            
+            }
+            if (c == 'B') {
+                coordinate = moveBackward();
+}                                            
         }
        return coordinate.x() + ":" + coordinate.y() + ":" + direction.value();      
     }    
@@ -55,6 +58,22 @@ class MoonRover {
     } 
 
     return new Coordinate(x, ny);
+}
+
+private Coordinate moveBackward() {
+    int x = coordinate.x();
+    int y = coordinate.y();
+    
+    if (direction == Direction.NORTH) {
+        if (y == 0) {            
+            y = 1;
+            direction = direction.opposite();
+        } else {
+            y = y - 1;
+        }
+    }
+
+    return new Coordinate(x, y);
 }
 
 }
