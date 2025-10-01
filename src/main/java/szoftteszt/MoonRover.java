@@ -19,11 +19,11 @@ class MoonRover {
             }
             if (c == 'F') {
                 coordinate = move();
-            }                                   
+            }                                            
         }
        return coordinate.x() + ":" + coordinate.y() + ":" + direction.value();      
-    }
-    
+    }    
+   
     private Coordinate move() {
     int x = coordinate.x();
     int y = coordinate.y();
