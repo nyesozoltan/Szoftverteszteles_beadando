@@ -46,7 +46,8 @@ public class MoonRoverTest {
         "F, 0:1:N",
         "FFFFF, 0:5:N",
         "FFFFFFFFF, 0:9:S",
-        "FFFFFFFFFFFFFFFFFF, 0:0:N",                                               
+        "FFFFFFFFFF, 0:8:S",
+        "FFFFFFFFFFFFFFFFFF, 0:0:N"                                                       
     }) 
 
     public void
