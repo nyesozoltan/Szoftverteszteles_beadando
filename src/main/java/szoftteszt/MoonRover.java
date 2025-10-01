@@ -78,8 +78,11 @@ private Coordinate moveBackward() {
         } else {
             y = y + 1; 
         }
-    }
 
+    } else if (direction == Direction.EAST) {        
+        x = (x == 0) ? MAX_WIDTH - 1 : x - 1;
+    }
+        
     return new Coordinate(x, y);
 }
 
