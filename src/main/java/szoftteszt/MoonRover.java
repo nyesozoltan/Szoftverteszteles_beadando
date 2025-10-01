@@ -72,7 +72,12 @@ private Coordinate moveBackward() {
             y = y - 1;
         }
     }  else if (direction == Direction.SOUTH) {       
-        y = y + 1;        
+        if (y == MAX_HEIGHT) {
+            y = MAX_HEIGHT - 1;
+            direction = direction.opposite();
+        } else {
+            y = y + 1; 
+        }
     }
 
     return new Coordinate(x, y);
