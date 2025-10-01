@@ -81,8 +81,11 @@ private Coordinate moveBackward() {
 
     } else if (direction == Direction.EAST) {        
         x = (x == 0) ? MAX_WIDTH - 1 : x - 1;
-    }
-        
+
+    } else if (direction == Direction.WEST) {        
+        x = (x + 1) % MAX_WIDTH;
+    } 
+
     return new Coordinate(x, y);
 }
 
