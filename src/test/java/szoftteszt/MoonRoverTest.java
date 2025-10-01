@@ -107,7 +107,9 @@ public class MoonRoverTest {
 
     @ParameterizedTest
      @CsvSource({
-        "LB, 1:0:W"
+        "LB, 1:0:W",
+        "LBB, 2:0:W",
+        "LBBBBBBBBB, 0:0:W"
     })
     public void
     move_backward_when_facing_west(String commands, String expected) {
