@@ -85,12 +85,22 @@ public class MoonRoverTest {
         "B, 0:1:S",
         "BB, 0:2:S",
         "BBBBBBBBB, 0:9:S",
-        "BBBBBBBBBB, 0:8:N",                                                              
+        "BBBBBBBBBB, 0:8:N",
+        "BBBBBBBBBBBBBBBBBBB, 0:1:S",                                                                    
     }) 
 
     public void
     move_backward_when_facing_north(String commands, String position) {
          assertThat(moonrover.execute(commands), is(position));              
+    }
+
+    @ParameterizedTest
+     @CsvSource({
+        "RB, 8:0:E"
+    })
+    public void
+    move_backward_when_facing_east(String commands, String expected) {
+    assertThat(moonrover.execute(commands), is(expected));
     }
 
 }
