@@ -96,7 +96,9 @@ public class MoonRoverTest {
 
     @ParameterizedTest
      @CsvSource({
-        "RB, 8:0:E"
+        "RB, 8:0:E",
+        "RBB, 7:0:E",
+        "RBBBBBBBBB, 0:0:E",
     })
     public void
     move_backward_when_facing_east(String commands, String expected) {
