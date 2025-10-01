@@ -71,7 +71,7 @@ private Coordinate moveBackward() {
         } else {
             y = y - 1;
         }
-    } else if (direction == Direction.SOUTH) {       
+    }  else if (direction == Direction.SOUTH) {       
         y = y + 1;        
     }
 
